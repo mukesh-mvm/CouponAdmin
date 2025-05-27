@@ -496,8 +496,8 @@ const Coupon = () => {
                         rules={[{ required: true, message: "Please input coupon description!" }]}
                     >
                         <Input.TextArea
-                            placeholder="Enter coupon description"
-                            autoSize={{ minRows: 3, maxRows: 6 }}
+                            placeholder="Enter coupon description in new line"
+                            autoSize={{ minRows: 6, maxRows: 6 }}
                         />
                     </Form.Item>
 
