@@ -194,7 +194,7 @@ const Coupon = () => {
     const handleStatusToggle = async (record) => {
         try {
             const response = await axios.patch(
-                `${baseurl}/api/catagory/toggled/${record?._id}`
+                `${baseurl}/api/coupon/toggled/${record?._id}`
             );
             // console.log(response);
 
@@ -245,6 +245,7 @@ const Coupon = () => {
                 setIsModalOpen(false);
                 message.success("User created successfully!");
                 fetchData();
+                                setPhoto("");
             }
         } catch (error) {
             console.log(error);
@@ -276,6 +277,7 @@ const Coupon = () => {
                 fetchData();
                 message.success("User update successfully!");
                 form.resetFields();
+                                setPhoto("");
             }
         } catch (error) {
             console.log(error);
@@ -295,24 +297,16 @@ const Coupon = () => {
             dataIndex: "title",
             key: "name",
         },
-        // {
-        //     title: "Title",
-        //     dataIndex: "title",
-        //     key: "title",
-        // },
-
-        // {
-        //     title: "Description",
-        //     dataIndex: "para",
-        //     key: "para",
-        // },
-
-
-        // specialization
+        
+          {
+      title: "Categories",
+      dataIndex: ['category', 'name'],
+      key: "name",
+    },
 
         {
             title: "Status",
-            key: "Status",
+            key: "status",
             render: (_, record) => (
                 <Switch
                     checked={record.status === "Active"}
@@ -468,7 +462,7 @@ const Coupon = () => {
                     <Form.Item
                         name="code"
                         label="Coupon Code"
-                        rules={[{ required: true, message: "Please input code!" }]}
+                        // rules={[{ required: true, message: "Please input code!" }]}
                     >
                         <Input placeholder="Enter Coupon Code" />
                     </Form.Item>

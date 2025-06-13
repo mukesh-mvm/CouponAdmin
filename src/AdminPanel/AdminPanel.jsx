@@ -21,6 +21,8 @@ const { Header, Sider, Content } = Layout;
 
 import Users from "./Users";
 import Category from "./Category";
+import BestOffer from "./BestOffer";
+import DealOnFire from "./DealOnFire";
 
 import Coupon from "./Coupon";
 
@@ -50,23 +52,26 @@ const AdminPanel = () => {
       case "users":
       return <Users />;
        
-      
         case "categories":
         return <Category />;
 
         case "coupon":
         return <Coupon />;
 
+        case "best-offer":
+        return <BestOffer />;
+        
+        case "deal-on-fire":
+        return <DealOnFire />;
 
-
-      // BlogList
     }
   };
 
   const menuItems = [
     { key: "categories", icon: <HomeOutlined />, label: "Categories" },
-    // { key: "sub-categories", icon: <TeamOutlined  />, label: "Sub-Categories" },
     { key: "coupon", icon: <TeamOutlined  />, label: "Coupon" },
+    { key: "best-offer", icon: <TeamOutlined  />, label: "Best Offer" },
+    { key: "deal-on-fire", icon: <TeamOutlined  />, label: "Deal On Fire" },
   
   ];
 
@@ -75,11 +80,12 @@ const AdminPanel = () => {
   const menuItems1 = [
   
     { key: "categories", icon: <HomeOutlined />, label: "Categories" },
-    // { key: "sub-categories", icon: <TeamOutlined  />, label: "Sub-Categories" },
+   
     { key: "coupon", icon: <TeamOutlined  />, label: "Coupon" },
+     { key: "best-offer", icon: <TeamOutlined  />, label: "Best Offer" },
+      { key: "deal-on-fire", icon: <TeamOutlined  />, label: "Deal On Fire" },
   
-    // { key: "blog", icon: <CarOutlined />, label: "Blog" },
-    // { key: "testinomial", icon: <CalendarOutlined />, label: "Testinomial" },
+   
   ];
   return (
     <Layout style={{ minHeight: "100vh", maxWidth: "100vw" }}>
